@@ -17,4 +17,5 @@ Content-Type: application/json
 PATCH {{base_url}}/alterar/1
 Content-Type: application/json
 
-
+### Buscar Tarefas não Concluídas ###
+GET {{base_url}}/listar/naoconcluidas

@@ -90,35 +90,24 @@ public class TarefaController : ControllerBase
 	
 	// GET: api/tarefa/listar/naoconcluidas
 	[HttpGet("listar/naoconcluidas")]
-	// public IActionResult Buscar()
-	// {
-	// 	try
-	// 	{
-	// 		Tarefa? tarefa = _context.Tarefas
-	// 			.Include(x => x.Categoria)
-	// 			.FirstOrDefault(x => x.Status == "Não iniciada" || x.Status == "Em Andamento");
-	// 		if (tarefa == null)
-	// 		{
-	// 			return NotFound();
-	// 		}
-	// 		return Ok(tarefa);
-	// 	}
-	// 	catch (Exception e)
-	// 	{
-	// 		return BadRequest(e.Message);
-	// 	}
-		
-	// } 
-		public IActionResult ListarNaoConcluidas()
+	public IActionResult Buscar()
 	{
 		try
 		{
-			List<Tarefa> tarefas = _context.Tarefas.Include(x => x.Categoria).ToList();
-			return Ok(tarefas);
+			Tarefa? tarefa = _context.Tarefas
+				.Include(x => x.Categoria)
+				.FirstOrDefault(x => x.Status == "Não iniciada" || x.Status == "Em Andamento");
+			if (tarefa == null)
+			{
+				return NotFound();
+			}
+			return Ok(tarefa);
 		}
 		catch (Exception e)
 		{
 			return BadRequest(e.Message);
 		}
-	}
+		
+	} 
+
 }
