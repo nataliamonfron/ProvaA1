@@ -13,3 +13,13 @@ Content-Type: application/json
   "CategoriaId": 4
 }
 
+### Alterar Tarefa ###
+PATCH {{base_url}}/alterar/1
+Content-Type: application/json
+
+{
+  "Titulo": "Lalala",
+  "Descricao": "Lalala",
+  "CategoriaId": 1
+}
+

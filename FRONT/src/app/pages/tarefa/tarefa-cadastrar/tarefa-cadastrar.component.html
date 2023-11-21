@@ -1,0 +1,19 @@
+<div>
+    <h2>Cadastrar Tarefa</h2>
+    <form (submit)="cadastrar()">
+      <div>
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" [(ngModel)]="titulo" name="titulo" required>
+      </div>
+      <div>
+        <label for="cpf">Descrição:</label>
+        <input type="text" id="cpf" [(ngModel)]="descricao" name="descricao" required>
+    </div>
+      <div>
+        <label for="categoriaId">Categoria:</label>
+        <input type="text" id="categoriaId" [(ngModel)]="categoriaId" name="categoriaId" required>
+      </div>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
